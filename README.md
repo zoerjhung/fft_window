@@ -1,7 +1,7 @@
 # fft_window
 **Author: Ruei-Jyun Hung**
 
-This repository includes the code for the `fft_window.m` Matlab function.
+This repository includes the code for the `fft_window.m` Matlab function. This function is intended to add a moving window while using fft.
 
 
 
