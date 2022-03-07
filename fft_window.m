@@ -29,6 +29,8 @@ ind = 1+(n_window-1)*shift_sample+window_sample;
 data_length = sample+1; 
 if ind > data_length
     n_window_real = n_window-1;
+else
+    n_window_real = n_window;
 end
 
 % frequency
