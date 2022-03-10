@@ -41,7 +41,7 @@ xlabel('sec');
 ylabel('uV');
 title('Concat');
 
-%% fft
+%% 2. fft_window
 n_channel = 1;
 Fs = 1000;
 window = 4;
@@ -65,6 +65,36 @@ title('epoch 2');
 
 % epoch3
 [psd, f] = fft_window(y4, 8, 12, n_channel, Fs, window, shift); % fft analysis
+subplot(3, 1, 3), plot(f,psd);
+ylim([0 120]);
+xlabel('frequency');
+ylabel('power');
+title('epoch 3');
+
+%% 3. fft_hanningwindow
+n_channel = 1;
+Fs = 1000;
+window = 4;
+shift = 0.5;
+
+% epoch1
+[psd, f] = fft_hanningwindow(y4, 0, 4, n_channel, Fs, window, shift); % fft analysis
+figure, subplot(3, 1, 1), plot(f,psd);
+ylim([0 120]);
+xlabel('frequency');
+ylabel('power');
+title('epoch 1');
+
+% epoch2
+[psd, f] = fft_hanningwindow(y4, 4, 8, n_channel, Fs, window, shift); % fft analysis
+subplot(3, 1, 2), plot(f,psd);
+ylim([0 120]);
+xlabel('frequency');
+ylabel('power');
+title('epoch 2');
+
+% epoch3
+[psd, f] = fft_hanningwindow(y4, 8, 12, n_channel, Fs, window, shift); % fft analysis
 subplot(3, 1, 3), plot(f,psd);
 ylim([0 120]);
 xlabel('frequency');
