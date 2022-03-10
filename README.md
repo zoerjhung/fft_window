@@ -2,7 +2,7 @@
 **Author: Ruei-Jyun Hung**
 [![View fft_window on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/107589-fft_window)
 
-This repository includes the code for the `fft_window.m` Matlab function. This function is intended to add a moving window while using fft.
+This repository includes the code for the `fft_window.m`  and  `fft_hanningwindow.m` Matlab function. This function is intended to add a moving window while using fft.
 
 
 
@@ -72,7 +72,7 @@ title('Concat');
 ![signal example](./fig1.png)
 
 ```matlab
-%% fft
+%% 2. fft_window
 n_channel = 1;
 Fs = 1000;
 window = 4;
@@ -104,3 +104,36 @@ title('epoch 3');
 ```
 
 ![fft example](./fig2.png)
+
+```matlab
+%% 3. fft_hanningwindow
+n_channel = 1;
+Fs = 1000;
+window = 4;
+shift = 0.5;
+
+% epoch1
+[psd, f] = fft_hanningwindow(y4, 0, 4, n_channel, Fs, window, shift); % fft analysis
+figure, subplot(3, 1, 1), plot(f,psd);
+ylim([0 120]);
+xlabel('frequency');
+ylabel('power');
+title('epoch 1');
+
+% epoch2
+[psd, f] = fft_hanningwindow(y4, 4, 8, n_channel, Fs, window, shift); % fft analysis
+subplot(3, 1, 2), plot(f,psd);
+ylim([0 120]);
+xlabel('frequency');
+ylabel('power');
+title('epoch 2');
+
+% epoch3
+[psd, f] = fft_hanningwindow(y4, 8, 12, n_channel, Fs, window, shift); % fft analysis
+subplot(3, 1, 3), plot(f,psd);
+ylim([0 120]);
+xlabel('frequency');
+ylabel('power');
+title('epoch 3');
+```
+![fft example](./psd_fft_hanningwindow.png)
