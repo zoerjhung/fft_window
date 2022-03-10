@@ -137,3 +137,4 @@ ylabel('power');
 title('epoch 3');
 ```
 
+![fft example](./psd_fft_hanningwindow.png)
