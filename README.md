@@ -2,7 +2,7 @@
 **Author: Ruei-Jyun Hung**
 [![View fft_window on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/107589-fft_window)
 
-This repository includes the code for the `fft_window.m` and `fft_hanningwindow.m` Matlab functions. The functions is intended to add a moving window while using fft.
+This repository includes the code for the `fft_window.m` and `fft_hanningwindow.m` Matlab functions. The functions are intended to add a moving window while using fft.
 
 
 
